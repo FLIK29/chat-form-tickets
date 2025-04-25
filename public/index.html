@@ -1,1 +1,78 @@
-// to be replaced
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat Tattoo App</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: green;
+    }
+    #logout-btn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    .view {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .ticket-button {
+      margin: 10px;
+      padding: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button id="logout-btn">Cerrar sesión</button>
+  <div class="header">
+    <div id="user-name">Usuario</div>
+    <div class="status-dot"></div>
+  </div>
+
+  <!-- Vistas -->
+  <div id="waiting-room" class="view active">
+    <h2>Bienvenido</h2>
+    <button id="new-ticket-btn">Nuevo Tatuaje</button>
+    <div id="ticket-list"></div>
+  </div>
+
+  <div id="form-view" class="view">
+    <form id="tattoo-form">
+      <input type="text" name="idea" placeholder="Idea de tatuaje" required><br>
+      <input type="text" name="placement" placeholder="Ubicación en el cuerpo" required><br>
+      <input type="text" name="size" placeholder="Tamaño" required><br>
+      <input type="text" name="appointment" placeholder="Día y hora preferida" required><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div id="chat-view" class="view">
+    <div id="chat-log"></div>
+    <input type="text" id="chat-input" placeholder="Escribe aquí...">
+    <button id="chat-send">Enviar</button>
+    <button id="back-btn">Regresar a la sala de espera</button>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
